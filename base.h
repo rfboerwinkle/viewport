@@ -1,5 +1,5 @@
-// This file represents a standard interface for testing view calculating
-// algorithms. The algorithm should implement `generate_view`. Some of these
+// This file represents a standard interface for testing view-calculating
+// algorithms. Each algorithm should implement `generate_view`. Some of these
 // functions are intended for use in the algorithm, some are not. More
 // information can be found at the declaration of the `generate_view`.
 //
@@ -25,19 +25,19 @@
 #define VIEW_DIAMETER (VIEW_RADIUS * 2 + 1)
 
 // Generates the map to be viewed.
-// `density` is the probability ([0-1] maps to [0,256]) that any given tile is
+// `density` is the probability ([0-1] maps to [0-256]) that any given tile is
 // opaque.
 void generate_map(uint16_t seed, uint16_t density);
 
 // Reads in map data from stdin. It should be formatted as an ascii square with
-// side lengths `VIEW_DIAMETER` where each row is delimited by a newline
-// character. '#' is used to indicate an opaque square. Everything else is
+// side lengths `VIEW_DIAMETER`, where each row is delimited by a newline
+// character. '#' is used to indicate an opaque tile. Everything else is
 // considered transparent, but it is encouraged to put a '@' at the center to
-// indicate the character and use '.' for generic floor tiles. Everything after
-// the first `(VIEW_DIAMETER + 1) * VIEW_DIAMETER` bytes is ignored.
+// indicate the player and use '.' for generic floor tiles. Everything after the
+// first `(VIEW_DIAMETER + 1) * VIEW_DIAMETER` bytes is ignored.
 //
-// Returns `0` upon success and `-1` upon failure and prints the error to
-// stderr.
+// Upon success, returns `0`. Upon failure, returns `-1` and prints the error to
+// stderr (and the contents of the map are undefined).
 int32_t read_map(void);
 
 // This tracks how many times a tile was polled for opacity. You should
