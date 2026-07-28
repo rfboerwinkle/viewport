@@ -24,6 +24,7 @@
 #define VIEW_RADIUS 15
 #define VIEW_DIAMETER (VIEW_RADIUS * 2 + 1)
 
+#define DENSITY_TOP 256
 // Generates the map to be viewed.
 // `density` is the probability ([0-1] maps to [0-256]) that any given tile is
 // opaque.

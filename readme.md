@@ -1,8 +1,9 @@
 # TL;DR
-```sh
-./build.sh reference
-./bin/reference < maps/room.txt
-```
+Build: `./build.sh reference`
+
+Run example room: `./bin/reference v < maps/room.txt`
+
+Run pseudo-random room: `./bin/reference g 100 15 | ./bin/reference v`
 
 # Getting Started
 Read `base.h`. It explains most things.

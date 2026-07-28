@@ -45,7 +45,7 @@ int32_t read_map(void) {
 			return -1;
 		}
 		if (buf[VIEW_DIAMETER] != '\n') {
-			fprintf(stderr, "Expected newline after %d characters.\n", VIEW_DIAMETER);
+			fprintf(stderr, "Expected newline at character %lu.\n", VIEW_DIAMETER * (i+1));
 			return -1;
 		}
 		memcpy(&map[i * VIEW_DIAMETER], buf, VIEW_DIAMETER);
